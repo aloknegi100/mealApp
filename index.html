@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div>
+        <a href="index.html">
+          <h1>Meal App</h1>
+        </a>
+      </div>
+      <div>
+        <a href="#" id="fav-link" onclick="refreshfav()"><h3>FAVOURITES</h3></a>
+      </div>
+    </div>
+    <div id="container">
+      <div id="search-container">
+        <input
+          type="text"
+          id="search"
+          value=""
+          placeholder="Search Your Recipe..."
+        />
+      </div>
+      <div id="fav-list">
+        <h1>Favourites List</h1>
+      </div>
+
+      <div id="display"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
