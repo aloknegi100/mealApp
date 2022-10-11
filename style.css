@@ -1,19 +1,25 @@
+/* font used is added via cdn link */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+/* setting default margin */
 *{
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
 }
+/* body color and other properties set */
 body{
     min-height: 100vh;
     background-color: rgb(26, 26, 27);
     font-family: 'Nunito', sans-serif;
 
 }
+/* favourites list initially hidden */
 #fav-list{
     display: none;
     color: white;
 }
+
+/* header navbar  */
 
 #header{
     color: white;
@@ -23,18 +29,21 @@ body{
     justify-content: space-between ;
     padding-top: 1rem;
 }
+/* title meal app */
 #header div{
     color: white;
     margin-left: 5%;
     margin-right: 5%;
 }
 
+/* for the links in header or navbar */
 #header a{
     text-decoration: none;
     color: white;
     font-size: 1rem;
 }
 
+/* search container seeting up it in center etc */
 #search-container{
     position: absolute;
     top: 25%;
@@ -48,6 +57,8 @@ body{
     border-radius: 3rem;
     
 }
+
+/* search bar input */
 #search-container #search{
     width: 100%;
     height: 100%;
@@ -59,7 +70,7 @@ body{
     outline: none;
 }
 
-
+/* div for the result fetch from api and displaying it  */
 #display{
     position: absolute; 
     top: 30%;
@@ -73,6 +84,7 @@ body{
     justify-content: space-around;
 
 }
+/* each meal fetched here designing the div */
 .eachMeal{
     width:380px;
     min-height: 470px;
@@ -91,6 +103,7 @@ body{
 
 }
 
+/* image of meal */
 .eachMeal img{
     border-radius: 50%;
     width: 100%;
@@ -117,11 +130,12 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
+/* hover on meal buttons like view recipe and add to favourites */
 .meal-details input:hover{
     background-color: white;
     color: black;
 }
-
+/* div when no meal found */
 .found-none{
     color: white;
 }
@@ -129,6 +143,7 @@ body{
     display: flex;
     justify-content: center;
 }
+/* recipe container div */
 #recipe-container{
     margin-top: 4rem;
     width: 95%;
@@ -137,6 +152,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
+/* image in recipe div */
 #recipe-container img{
     border-radius: 50%;
     width: 300px;
@@ -175,7 +191,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-
+/* for screen devices below 900 px */
 @media screen and (max-width:900px) {
     #search-container{
 
@@ -191,7 +207,7 @@ body{
 
 
 }
-
+/*  for screen below 600px */
 @media screen and (max-width:600px) {
         #search-container{
 

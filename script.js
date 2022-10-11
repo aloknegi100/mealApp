@@ -1,3 +1,4 @@
+// its make a favourites meal array if its not exist in local storage
 if (localStorage.getItem("favouritesList") == null) {
     localStorage.setItem("favouritesList", JSON.stringify([]));
 }
@@ -17,9 +18,10 @@ async function refreshfav()
     }
 
 }
-
+// fetching search bar
 let search=document.getElementById('search');
 
+// adding event listner for every input in search bar
 search.addEventListener('input', async function(e){
     await clearDisplay();
     let x=search.value;
@@ -34,6 +36,7 @@ search.addEventListener('input', async function(e){
     }
     
 })
+// it shows all favourites meal
 function showfav(result){
     let mealList=result.meals;
     if(mealList==null)
@@ -44,6 +47,7 @@ function showfav(result){
         createfav(meal);
     }
 }
+// creating dom for favourites meal
 function createfav(meal){
     console.log(meal);
     let div=document.createElement("div")
@@ -60,6 +64,7 @@ function createfav(meal){
     document.getElementById("display").append(div)
 }
 
+// its show's all meals card in main acording to search input value
 function showMeal(result){
     let mealList=result.meals;
     if(mealList==null)
@@ -71,6 +76,7 @@ function showMeal(result){
     }
 }
 
+// creating dom for all the meals fethced from api
 function createDom(meal){
     console.log(meal);
     let div=document.createElement("div")
@@ -86,6 +92,7 @@ function createDom(meal){
     div.append(details)
     document.getElementById("display").append(div)
 }
+// dom for no meal found
 function createDomNULL(){
     let div=document.createElement('div');
     div.classList.add("found-none");
@@ -93,10 +100,12 @@ function createDomNULL(){
     document.getElementById("display").append(div);
 
 }
-
+// clearing the display
 function clearDisplay(){
     document.getElementById("display").innerHTML="";
 }
+
+// this takes id as input and show the meal
 async function showMealDetails(idMeal){
     let container=document.getElementById("container");
     let meal=await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`).then(res=>res.json());
@@ -122,7 +131,7 @@ async function showMealDetails(idMeal){
 
     container.innerHTML=html;
 }
-
+// for the button add/remove favourites
 function addRemoveToFavList(id) {
     let arr=JSON.parse(localStorage.getItem("favouritesList"));
     let contain=false;
